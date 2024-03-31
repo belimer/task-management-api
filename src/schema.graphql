@@ -1,0 +1,63 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Task {
+  _id: String!
+
+  """Task title """
+  title: String!
+
+  """task description """
+  description: String!
+
+  """task due date """
+  dueDate: String!
+}
+
+type Query {
+  task: Task!
+  tasks(listTasksInput: ListTasksInput!): [Task!]!
+   allTasks: [Task!]!
+   oneTask(title: String!): Task!
+   findById(_id:String!):Task!
+}
+
+type Mutation {
+    createTask(createTaskInput: CreateTaskInput!): Task!
+    updateTask(updateTaskInput: UpdateTaskInput!): Task!
+    deleteTask(_id: String!): Boolean
+}
+input CreateTaskInput {
+
+  """Task title """
+  title: String!
+
+  """task description """
+  description: String!
+
+  """task due date """
+  dueDate: String!
+}
+input ListTasksInput {
+  """
+  classical limit
+  """
+  limit: Float!
+
+  """
+  classical offset
+  """
+  offset: Float!
+}
+input UpdateTaskInput {
+   _id: String!
+ """Task title """
+  title: String!
+
+  """task description """
+  description: String!
+
+  """task due date """
+  dueDate: String!
+}
